@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground bg-gray-100;
+  }
+
+  /* Platform-specific colors */
+  :root {
+    --youtube: 0, 100%, 50%;
+    --instagram: 337, 82%, 61%;
+    --twitter: 203, 89%, 53%;
+    --facebook: 221, 44%, 41%;
+  }
+}
+
+/* Add platform-specific text colors */
+.text-youtube {
+  color: hsl(var(--youtube));
+}
+
+.text-instagram {
+  color: hsl(var(--instagram));
+}
+
+.text-twitter {
+  color: hsl(var(--twitter));
+}
+
+.text-facebook {
+  color: hsl(var(--facebook));
+}
+
+/* Add platform-specific background colors */
+.bg-youtube {
+  background-color: hsl(var(--youtube));
+}
+
+.bg-instagram {
+  background-color: hsl(var(--instagram));
+}
+
+.bg-twitter {
+  background-color: hsl(var(--twitter));
+}
+
+.bg-facebook {
+  background-color: hsl(var(--facebook));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-md;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Card animations */
+.card-hover-effect {
+  @apply transition-all duration-200;
+}
+
+.card-hover-effect:hover {
+  @apply shadow-md transform -translate-y-1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .sidebar-hidden {
+    @apply -translate-x-full;
+  }
+}
